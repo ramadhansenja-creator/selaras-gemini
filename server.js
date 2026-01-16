@@ -62,6 +62,8 @@ app.post("/api/gemini", async (req, res) => {
 
 app.get("/health", (_, res) => res.send("OK"));
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log("🚀 Gemini API running");
+const PORT = process.env.PORT || 3333;
+
+app.listen(PORT, () => {
+  console.log("✅ Gemini API running on port", PORT);
 });
