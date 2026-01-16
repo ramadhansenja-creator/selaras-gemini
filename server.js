@@ -12,7 +12,10 @@ app.use(express.json());
 
 // 🔐 Firebase Admin dari ENV (AMAN)
 admin.initializeApp({
-  credential: admin.credential.cert(JSON.parse(process.env.FIREBASE_KEY))
+  credential: admin.credential.cert(
+  JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)
+)
+
 });
 
 const db = admin.firestore();
